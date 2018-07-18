@@ -5,17 +5,27 @@ export default class ListUnit extends Component {
     constructor(props) {
         super(props);
 
+        this.filterHandlers = [
+            {title: '全部', handleMethod: (item) => true},
+            {title: '未完成', handleMethod: (item) => !item.checked},
+            {title: '已完成', handleMethod: (item) => item.checked}];
         this.state = {
             currentFilter: '全部',
-            filters: ['全部', '未完成', '已完成'],
-            items: [{id: 'b358f498-2cac-48b9-ba3a-5e264868a9', content: '做作业', checked: false, display: true, editable: false},
-                {id: 'b358f498-2cac-48b9-ba3a-5e2648672a9', content: '看电视', checked: true, display: true, editable: false},
-                {id: 'b358f498-2cac-48b9-ba3a-5e268678602a9', content: '打游戏', checked: false, display: true, editable: false}]
+            items: []
         };
         //设置监听器，监听用户是否添加新项目。
         emitter.addListener('addItemEvent', (message) => {
             this.state.items.push({id: this.generateUUID(), content: message.trim(), checked: false, display: true, editable: false});
             this.setState(this.state);
+        });
+        //设置监听器，监听过滤按钮是否被点击
+        emitter.addListener('filterChangeEvent', (message) => {
+            let handler = this.filterHandlers.find(item => item.title === message);
+           this.state.currentFilter = message;
+           this.state.items.forEach((item) => {
+               item.display = handler.handleMethod(item);
+           });
+           this.setState(this.state);
         });
     }
 
@@ -60,11 +70,16 @@ export default class ListUnit extends Component {
 
     render() {
         let itemsArray = this.state.items.map(item => {
-            return <li className={item.checked ? 'checked' : ''}>
-                <input name="done-todo" type="checkbox" className="done-todo" checked={item.checked}
-                       onClick={this.onCheckBoxClicked.bind(this, item.id)}/>
-                <span contentEditable={item.editable} onClick={this.onSpanClicked.bind(this, item.id)} onBlur={this.onSpanBlur.bind(this, item.id)}> {item.content}</span>
-            </li>
+            let itemElem = null;
+            if (item.display) {
+                itemElem = <li className={item.checked ? 'checked' : ''}>
+                    <input name="done-todo" type="checkbox" className="done-todo" checked={item.checked}
+                           onClick={this.onCheckBoxClicked.bind(this, item.id)}/>
+                    <span contentEditable={item.editable} onClick={this.onSpanClicked.bind(this, item.id)}
+                          onBlur={this.onSpanBlur.bind(this, item.id)}> {item.content}</span>
+                </li>
+            }
+            return itemElem;
         });
 
         let resultElem =

@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import AddUnit from './components/AddUnit'
 import ListUnit from './components/ListUnit'
+import FilterUnit from "./components/FilterUnit";
 
 class App extends Component {
     render() {
@@ -17,19 +18,7 @@ class App extends Component {
                 <AddUnit/>
                 <br/>
                 <ListUnit/>
-                <div>
-                    <ul id="filters">
-                        <li>
-                            <a href="#" data-filter="all">全部</a>
-                        </li>
-                        <li>
-                            <a href="#" data-filter="active">未完成</a>
-                        </li>
-                        <li>
-                            <a href="#" data-filter="complete">已完成</a>
-                        </li>
-                    </ul>
-                </div>
+                <FilterUnit/>
             </div>
         );
     }
