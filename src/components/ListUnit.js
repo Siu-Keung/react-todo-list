@@ -1,6 +1,6 @@
 import emitter from './emitter'
 import React, {Component} from 'react';
-
+import '../css/ListUnit.css';
 export default class ListUnit extends Component {
     constructor(props) {
         super(props);

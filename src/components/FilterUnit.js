@@ -1,5 +1,6 @@
 import emitter from './emitter'
 import React, {Component} from 'react';
+import '../css/FilterUnit.css';
 
 export default class FilterUnit extends Component {
     constructor(props) {
