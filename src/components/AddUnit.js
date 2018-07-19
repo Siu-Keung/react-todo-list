@@ -5,17 +5,16 @@ import '../css/AddUnit.css';
 export default class AddUnit extends Component {
     constructor(props) {
         super(props);
-        this.inputTextFieldVal = '';
     }
 
     onAddButtonClicked = () => {
-        emitter.emit("addItemEvent", this.inputTextFieldVal);
+        emitter.emit("addItemEvent", this.refs.addItemInput.value);
     }
 
     render() {
         let resultElem =
             <div>
-                <input className="input-text" type="text" name="ListItem" onChange={(event) => this.inputTextFieldVal = event.target.value}/>
+                <input className="input-text" type="text" name="ListItem" ref="addItemInput"/>
                 <div id="button" onClick={this.onAddButtonClicked}>Add</div>
             </div>
         return resultElem;

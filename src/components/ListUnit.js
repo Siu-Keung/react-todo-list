@@ -64,7 +64,7 @@ export default class ListUnit extends Component {
 
     onSpanBlur = (id, event) => {
         let item = this.state.items.find(current => current.id === id);
-        item.content = event.target.innerHTML;
+        item.content = event.target.innerText;
         this.setState(this.state);
     }
 
