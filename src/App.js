@@ -5,8 +5,12 @@ import AddUnit from './components/AddUnit'
 import ListUnit from './components/ListUnit'
 import FilterUnit from "./components/FilterUnit";
 import './todo.css';
+import AddUnitContainer from './containers/AddUnitContainer';
+import ListUnitContainer from './containers/ListUnitContainer';
+import FilterContainer from './containers/FilterContainer';
 
 class App extends Component {
+
     render() {
         return (
             <div className="container">
@@ -16,10 +20,13 @@ class App extends Component {
                         <em>Simple Todo List with adding and filter by diff status.</em>
                     </p>
                 </div>
-                <AddUnit/>
+                {/*<AddUnit/>*/}
+                <AddUnitContainer />
                 <br/>
-                <ListUnit/>
-                <FilterUnit/>
+                {/*<ListUnit/>*/}
+                <ListUnitContainer/>
+                {/*<FilterUnit/>*/}
+                <FilterContainer/>
             </div>
         );
     }
