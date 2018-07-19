@@ -1,9 +1,6 @@
 import React, {Component} from 'react';
 import logo from './logo.svg';
 import './App.css';
-import AddUnit from './components/AddUnit'
-import ListUnit from './components/ListUnit'
-import FilterUnit from "./components/FilterUnit";
 import './todo.css';
 import AddUnitContainer from './containers/AddUnitContainer';
 import ListUnitContainer from './containers/ListUnitContainer';
@@ -20,12 +17,9 @@ class App extends Component {
                         <em>Simple Todo List with adding and filter by diff status.</em>
                     </p>
                 </div>
-                {/*<AddUnit/>*/}
                 <AddUnitContainer />
                 <br/>
-                {/*<ListUnit/>*/}
                 <ListUnitContainer/>
-                {/*<FilterUnit/>*/}
                 <FilterContainer/>
             </div>
         );

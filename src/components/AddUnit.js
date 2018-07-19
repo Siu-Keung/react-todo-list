@@ -1,4 +1,4 @@
-import emitter from './emitter'
+
 import React, {Component} from 'react';
 import '../css/AddUnit.css';
 
@@ -9,7 +9,6 @@ export default class AddUnit extends Component {
     }
 
     handleAddButtonClicked = () => {
-        // emitter.emit("addItemEvent", this.addItemInput.current.value);
         const onAddButtonClicked = this.props.onAddButtonClicked;
         onAddButtonClicked(this.addItemInput.current.value);
     }

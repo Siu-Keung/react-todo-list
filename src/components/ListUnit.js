@@ -1,4 +1,4 @@
-import emitter from './emitter'
+
 import React, {Component} from 'react';
 import '../css/ListUnit.css';
 export default class ListUnit extends Component {
@@ -6,24 +6,6 @@ export default class ListUnit extends Component {
         super(props);
         this.spanContent = React.createRef();
     }
-
-    // onCheckBoxClicked = (id) => {
-    //     let item = this.state.items.find(current => current.id === id);
-    //     item.checked = !item.checked;
-    //     this.setState(this.state);
-    // }
-
-    // onSpanClicked = (id, event) => {
-    //     let item = this.state.items.find(current => current.id === id);
-    //     item.editable = true;
-    //     this.setState(this.state);
-    // }
-
-    // onSpanBlur = (id, event) => {
-    //     let item = this.state.items.find(current => current.id === id);
-    //     item.content = event.target.innerText;
-    //     this.setState(this.state);
-    // }
 
     spanBlur(id){
         this.props.onSpanBlur(id, this.spanContent.current.innerText);

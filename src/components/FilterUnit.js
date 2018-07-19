@@ -1,4 +1,4 @@
-import emitter from './emitter'
+
 import React, {Component} from 'react';
 import '../css/FilterUnit.css';
 
@@ -6,19 +6,6 @@ export default class FilterUnit extends Component {
     constructor(props) {
         super(props);
     }
-
-    // onFilterClicked(title) {
-    //     let newFilters = this.state.filters.map((item) => {
-    //         if (item.title === title)
-    //             item.selected = true;
-    //         else
-    //             item.selected = false;
-    //         return item;
-    //     });
-    //     this.state.filters = newFilters;
-    //     this.setState(this.state);
-    //     emitter.emit('filterChangeEvent', title);
-    // }
 
     render() {
         const {onFilterChanged} = this.props;
