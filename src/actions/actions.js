@@ -9,3 +9,4 @@ export const handleEnterKeyUp = (id, content) => ({type: 'ITEM_CONTENT_CHANGE', 
 
 //过滤器组件
 export const handleFilterChanged = (newFilterName) => ({type: 'FILTER_CHANGE', value: newFilterName});
+

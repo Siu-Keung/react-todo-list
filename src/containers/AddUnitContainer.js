@@ -1,6 +1,8 @@
 import {connect} from 'react-redux'
 import {addItem} from "../actions/actions";
 import AddUnit from '../components/AddUnit';
+import dataApi from '../api/DataApi';
+
 
 const mapStateToProps = (state, ownProps) =>{
     return state;
@@ -8,7 +10,10 @@ const mapStateToProps = (state, ownProps) =>{
 
 const mapDispatchToProps = (dispatch, ownProps) =>{
     return {
-        onAddButtonClicked: (newItem) => dispatch(addItem(newItem))
+        onAddButtonClicked: (newItemContent) => {
+            dataApi.addItem(newItemContent, (newItem) => {
+                dispatch({type: 'ADD_ITEM', value: newItem})});
+        },
     }
 }
 
