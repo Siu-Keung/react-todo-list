@@ -70,10 +70,10 @@ const DataApi = {
         });
     },
 
-    getItemsByFilter(filterTitle){
+    getItemsByFilter(filterTitle, callback){
         let resultItems = this.items.filter(item =>
             this.filterHandlers.find(filterItem => filterItem.title === filterTitle).handleMethod(item));
-        return resultItems;
+        callback(resultItems);
     }
 
 

@@ -34,8 +34,7 @@ export default (state = initState, event) => {
             targetItem.content = event.value.content;
             return newState;
         case 'FILTER_CHANGE':
-            let handler = filterHandlers.find(item => item.title === event.value).handleMethod;
-            newState.items.forEach(item => item.display = handler(item));
+            newState.items = event.value;
             newState.allFilters.forEach(item => {
                if(item.title === event.value)
                    item.selected = true;
