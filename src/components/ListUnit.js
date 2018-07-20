@@ -1,14 +1,16 @@
-
 import React, {Component} from 'react';
 import '../css/ListUnit.css';
+
 export default class ListUnit extends Component {
     constructor(props) {
         super(props);
-        this.spanContent = React.createRef();
+        this.inputValue = React.createRef();
     }
 
-    spanBlur(id){
-        this.props.onSpanBlur(id, this.spanContent.current.innerText);
+    onKeyUp(id, event) {
+        if (event.keyCode === 13) {
+            this.props.onEnterKeyUp(id, this.inputValue.current.value);
+        }
     }
 
     render() {
@@ -19,8 +21,12 @@ export default class ListUnit extends Component {
                 itemElem = <li className={item.checked ? 'checked' : ''}>
                     <input name="done-todo" type="checkbox" className="done-todo" checked={item.checked}
                            onClick={onCheckBoxClicked.bind(this, item.id)}/>
-                    <span ref={this.spanContent} contentEditable={item.editable} onClick={onSpanClicked.bind(this, item.id)}
-                          onBlur={this.spanBlur.bind(this, item.id)}> {item.content}</span>
+                    {/*<span ref={this.spanContent} contentEditable={item.editable} onClick={onSpanClicked.bind(this, item.id)}*/}
+                    {/*onKeyUp={this.onKeyUp.bind(this, item.id)}> {item.content}</span>*/}
+                    {item.editable ?
+                        (<input type='text' ref={this.inputValue} onKeyUp={this.onKeyUp.bind(this, item.id)} defaultValue={item.content}/>) :
+                        (<span onDoubleClick={onSpanClicked.bind(this, item.id)}>{item.content}</span>)}
+
                 </li>
             }
             return itemElem;

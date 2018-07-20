@@ -31,6 +31,7 @@ export default (state = initState, event) => {
             return newState;
         case 'ITEM_CONTENT_CHANGE':
             targetItem = newState.items.find(item => item.id === event.value.id);
+            targetItem.editable = false;
             targetItem.content = event.value.content;
             return newState;
         case 'FILTER_CHANGE':

@@ -1,5 +1,5 @@
 import {connect} from 'react-redux'
-import {handleCheckBoxClicked, handleSpanClicked, handleSpanBlur} from "../actions/actions";
+import {handleCheckBoxClicked, handleSpanClicked, handleEnterKeyUp} from "../actions/actions";
 import ListUnit from '../components/ListUnit';
 
 const mapStateToProps = (state, ownProps) =>{
@@ -10,7 +10,7 @@ const mapDispatchToProps = (dispatch, ownProps) =>{
     return {
         onCheckBoxClicked: (id) => dispatch(handleCheckBoxClicked(id)),
         onSpanClicked: (id) => dispatch(handleSpanClicked(id)),
-        onSpanBlur: (id, content) => dispatch(handleSpanBlur(id, content))
+        onEnterKeyUp: (id, content) => dispatch(handleEnterKeyUp(id, content))
     }
 }
 
