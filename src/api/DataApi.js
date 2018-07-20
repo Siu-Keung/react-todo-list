@@ -44,9 +44,16 @@ const DataApi = {
         callback(newItem);
     },
 
-    updateItem(id, newItem){
+    updateItem(id, newItem, callback){
         let index = this.items.findIndex(item => item.id === id);
         this.items.splice(index, 1, newItem);
+        callback();
+    },
+
+    toggleCheckedStatus(id, callback){
+        let targetItem = this.items.find(item => item.id === id);
+        targetItem.checked = !targetItem.checked;
+        callback();
     },
 
     updateActiveFilter(title){
