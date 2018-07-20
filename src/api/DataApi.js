@@ -56,6 +56,11 @@ const DataApi = {
         callback();
     },
 
+    updateItemContent(id, newContent, callback){
+        this.items.find(item => item.id === id).content = newContent;
+        callback(id, newContent);
+    },
+
     updateActiveFilter(title){
         this.allFilters.forEach(item => {
             if(item.title === title)
