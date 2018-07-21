@@ -1,3 +1,4 @@
+import filterHandlers from '../tools/FilterHandlers';
 
 //用于生成列表项的id
 function generateUUID() {
@@ -21,14 +22,9 @@ function generateUUID() {
 }
 
 const DataApi = {
-    items: [{id: '123456', content: '打游戏', checked: false, display: true, editable: false}],
+    items: [],
 
     allFilters: [{title: '全部', selected: true}, {title: '未完成', selected: false}, {title: '已完成', selected: false}],
-
-    filterHandlers: [
-        {title: '全部', handleMethod: (item) => true},
-        {title: '未完成', handleMethod: (item) => !item.checked},
-        {title: '已完成', handleMethod: (item) => item.checked}],
 
     getAllItems(){
         return this.items;
@@ -41,6 +37,7 @@ const DataApi = {
     addItem(newItemContent, callback){
         let newItem = {id: generateUUID(), content: newItemContent, checked: false, display: true, editable: false};
         this.items.push(newItem);
+
         callback(newItem);
     },
 
@@ -72,8 +69,8 @@ const DataApi = {
 
     getItemsByFilter(filterTitle, callback){
         let resultItems = this.items.filter(item =>
-            this.filterHandlers.find(filterItem => filterItem.title === filterTitle).handleMethod(item));
-        callback(resultItems);
+            filterHandlers.find(filterItem => filterItem.title === filterTitle).handleMethod(item));
+        callback(JSON.parse(JSON.stringify(resultItems)));
     }
 
 

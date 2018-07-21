@@ -10,7 +10,11 @@ const mapStateToProps = (state, ownProps) =>{
 const mapDispatchToProps = (dispatch, ownProps) =>{
     return {
         onFilterChanged: (newFilterName) => {
-            dataApi.getItemsByFilter(newFilterName, items => dispatch({type: 'FILTER_CHANGE', value: items}));
+            dataApi.getItemsByFilter(newFilterName, items => {
+                if(!items)
+                    return;
+                dispatch({type: 'FILTER_CHANGE', items, newFilterName})
+            });
         }
     }
 }

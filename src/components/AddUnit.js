@@ -8,6 +8,7 @@ export default class AddUnit extends Component {
         this.addItemInput = React.createRef();
     }
 
+
     handleAddButtonClicked = () => {
         const onAddButtonClicked = this.props.onAddButtonClicked;
         onAddButtonClicked(this.addItemInput.current.value);

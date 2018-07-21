@@ -2,9 +2,7 @@ import generateUUID from '../tools/tools';
 
 
 const initState = {
-    items: [
-        {id: '123456', content: '做作业', checked: false, display: true, editable: false}
-    ],
+    items: [],
     allFilters: [{title: '全部', selected: true}, {title: '未完成', selected: false}, {title: '已完成', selected: false}]
 };
 
@@ -34,9 +32,9 @@ export default (state = initState, event) => {
             targetItem.content = event.value.content;
             return newState;
         case 'FILTER_CHANGE':
-            newState.items = event.value;
+            newState.items = event.items;
             newState.allFilters.forEach(item => {
-               if(item.title === event.value)
+               if(item.title === event.newFilterName)
                    item.selected = true;
                else
                    item.selected = false;
