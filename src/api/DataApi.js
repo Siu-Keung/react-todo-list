@@ -36,9 +36,21 @@ const DataApi = {
     },
 
     addItem(newItemContent, callback){
-        let newItem = {id: generateUUID(), content: newItemContent, checked: false, display: true, editable: false};
-        this.items.push(newItem);
-        callback(newItem);
+        // let newItem = {id: generateUUID(), content: newItemContent, checked: false, display: true, editable: false};
+        // this.items.push(newItem);
+        // callback(newItem);
+        axios({
+            method: 'post',
+            url: "http://127.0.0.1:9999/addItem",
+            params: {content: newItemContent}
+        }).then(
+            response => {
+                let newItem = response.data;
+                newItem.display = true;
+                newItem.editable =false;
+                callback(newItem);
+        });
+
     },
 
     updateItem(id, newItem, callback){
