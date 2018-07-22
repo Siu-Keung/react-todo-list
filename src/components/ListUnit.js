@@ -13,6 +13,10 @@ export default class ListUnit extends Component {
         }
     }
 
+    componentDidMount(){
+        this.props.onPageLoad();
+    }
+
     render() {
         const {onCheckBoxClicked, onSpanClicked} = this.props;
         let itemsArray = this.props.items.map(item => {

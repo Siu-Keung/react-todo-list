@@ -1,4 +1,5 @@
 import filterHandlers from '../tools/FilterHandlers';
+import axios from 'axios';
 
 //用于生成列表项的id
 function generateUUID() {
@@ -37,7 +38,6 @@ const DataApi = {
     addItem(newItemContent, callback){
         let newItem = {id: generateUUID(), content: newItemContent, checked: false, display: true, editable: false};
         this.items.push(newItem);
-
         callback(newItem);
     },
 
@@ -68,9 +68,18 @@ const DataApi = {
     },
 
     getItemsByFilter(filterTitle, callback){
-        let resultItems = this.items.filter(item =>
-            filterHandlers.find(filterItem => filterItem.title === filterTitle).handleMethod(item));
-        callback(JSON.parse(JSON.stringify(resultItems)));
+        // let resultItems = this.items.filter(item =>
+        //     filterHandlers.find(filterItem => filterItem.title === filterTitle).handleMethod(item));
+        // callback(JSON.parse(JSON.stringify(resultItems)));
+
+        axios.get(`http://127.0.0.1:9999/getItems/${filterTitle}`).then(response =>{
+            let items = response.data;
+            items.forEach(item => {
+               item.display = true;
+            });
+            callback(items);
+        });
+
     }
 
 

@@ -27,7 +27,8 @@ const mapDispatchToProps = (dispatch, ownProps) => {
                     dispatch({type: 'ITEM_CONTENT_CHANGE', value: {id, content}});
                 }
             );
-        }
+        },
+        onPageLoad: () => dataApi.getItemsByFilter("全部", (items) => dispatch({type: "FILTER_CHANGE", items: items, newFilterName: '全部'}))
     }
 }
 

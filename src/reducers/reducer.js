@@ -34,10 +34,10 @@ export default (state = initState, event) => {
         case 'FILTER_CHANGE':
             newState.items = event.items;
             newState.allFilters.forEach(item => {
-               if(item.title === event.newFilterName)
-                   item.selected = true;
-               else
-                   item.selected = false;
+                if(item.title === event.newFilterName)
+                    item.selected = true;
+                else
+                    item.selected = false;
             });
             return newState;
         default:
