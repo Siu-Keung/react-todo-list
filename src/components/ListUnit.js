@@ -6,12 +6,11 @@ import {Input, Checkbox, List} from 'antd';
 export default class ListUnit extends Component {
     constructor(props) {
         super(props);
-        this.inputValue = React.createRef();
     }
 
-    onKeyUp(id, event) {
+    onKeyUp = (id, event) => {
         if (event.keyCode === 13) {
-            this.props.onEnterKeyUp(id, this.inputValue.current.value);
+            this.props.onEnterKeyUp(id, event.target.value);
         }
     }
 
@@ -25,12 +24,11 @@ export default class ListUnit extends Component {
         let itemsArray = this.props.items.map(item => {
             let itemElem = null;
             if (item.display) {
-                itemElem = <li className={item.checked ? 'checked' : ''}>
+                itemElem = <li className={item.checked ? 'checked' : ''} style={{width: '100%'}}>
                     <Checkbox checked={item.checked} onClick={onCheckBoxClicked.bind(this, item.id)}/>
 
                     {item.editable ?
-                        (<input type='text' ref={this.inputValue} onKeyUp={this.onKeyUp.bind(this, item.id)}
-                                defaultValue={item.content}/>) :
+                        (<Input style={{width: '90%'}} placeholder="请输入修改后的内容" defaultValue={item.content} onKeyUp={this.onKeyUp.bind(this, item.id)} />):
                         (<span onDoubleClick={onSpanClicked.bind(this, item.id)}>{item.content}</span>)}
 
                 </li>

@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
-import '../css/AddUnit.css';
 import 'antd/dist/antd.css';
-import {Input} from 'antd';
+import {Input, Icon} from 'antd';
 const Search = Input.Search;
 
 export default class AddUnit extends Component {
@@ -10,21 +9,13 @@ export default class AddUnit extends Component {
         this.addItemInput = React.createRef();
     }
 
-
-    // handleAddButtonClicked = () => {
-    //     const onAddButtonClicked = this.props.onAddButtonClicked;
-    //     onAddButtonClicked(this.addItemInput.current.value);
-    // }
-
     render() {
         let resultElem = (
             <div>
-                {/*<input className="input-text" type="text" name="ListItem" ref={this.addItemInput}/>*/}
-                {/*<div id="button" onClick={this.handleAddButtonClicked}>Add</div>*/}
 
                 <Search
                     placeholder="请输入要添加的内容"
-                    enterButton="Add"
+                    enterButton={<span><Icon type="plus-circle-o" /> Add</span>}
                     onSearch={value => this.props.onAddButtonClicked(value)}
                 />
 
