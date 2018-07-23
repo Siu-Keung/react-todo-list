@@ -2,10 +2,6 @@ import filterHandlers from '../tools/FilterHandlers';
 import axios from 'axios';
 
 const DataApi = {
-    items: [],
-
-    allFilters: [{title: '全部', selected: true}, {title: '未完成', selected: false}, {title: '已完成', selected: false}],
-
 
     addItem(newItemContent, callback){
         axios({
