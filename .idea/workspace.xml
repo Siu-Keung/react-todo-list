@@ -6,13 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="fa1c8c33-6750-46ba-9dba-694cc387bcba" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/DataApi.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/DataApi.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/AddUnit.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AddUnit.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/FilterUnit.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FilterUnit.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/ListUnitContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/ListUnitContainer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ListUnit.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ListUnit.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -44,11 +38,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AddUnit.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="AddUnit.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/AddUnit.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="506">
-              <caret line="26" column="37" selection-start-line="26" selection-start-column="37" selection-end-line="26" selection-end-column="37" />
+            <state relative-caret-position="44">
+              <caret line="2" selection-start-line="2" selection-end-line="3" selection-end-column="27" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ListUnit.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/components/ListUnit.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="374">
+              <caret line="29" column="30" selection-start-line="29" selection-start-column="30" selection-end-line="29" selection-end-column="30" />
+              <folding>
+                <element signature="e#0#39#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -141,7 +147,6 @@
         <option value="$PROJECT_DIR$/src/containers/AddUnitContainer.js" />
         <option value="$PROJECT_DIR$/src/tools/FilterHandlers.js" />
         <option value="$PROJECT_DIR$/src/index.js" />
-        <option value="$PROJECT_DIR$/src/components/ListUnit.js" />
         <option value="$PROJECT_DIR$/src/api/DataApi.js" />
         <option value="$PROJECT_DIR$/src/reducers/reducer.js" />
         <option value="$PROJECT_DIR$/src/containers/FilterContainer.js" />
@@ -149,6 +154,7 @@
         <option value="$PROJECT_DIR$/src/containers/ListUnitContainer.js" />
         <option value="$PROJECT_DIR$/src/App.js" />
         <option value="$PROJECT_DIR$/src/components/AddUnit.js" />
+        <option value="$PROJECT_DIR$/src/components/ListUnit.js" />
       </list>
     </option>
   </component>
@@ -338,7 +344,7 @@
       <workItem from="1532238960634" duration="8488000" />
       <workItem from="1532263417235" duration="967000" />
       <workItem from="1532307629768" duration="2270000" />
-      <workItem from="1532329139630" duration="11174000" />
+      <workItem from="1532329139630" duration="12197000" />
     </task>
     <task id="LOCAL-00001" summary="完成了列表组件和添加组件的编写">
       <created>1531916526093</created>
@@ -452,11 +458,18 @@
       <option name="project" value="LOCAL" />
       <updated>1532248193790</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="改成了用Router来控制all、active、competed的显示，并用为添加新item栏添加了ant样式">
+      <created>1532345679734</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1532345679734</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="79103000" />
+    <option name="totallyTimeSpent" value="80126000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -474,6 +487,7 @@
       <window_info anchor="bottom" id="Run" order="2" weight="0.32900432" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.3225108" />
       <window_info id="Capture Tool" order="2" />
+      <window_info anchor="bottom" id="TypeScript" order="8" />
       <window_info id="Designer" order="2" />
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49891776" visible="true" weight="0.22228146" />
       <window_info anchor="right" id="Database" order="3" />
@@ -489,7 +503,6 @@
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="TypeScript" order="8" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3293011" />
     </layout>
   </component>
@@ -519,7 +532,8 @@
     <MESSAGE value="修改了DataApi中的getItemsByFilter()方法，现在该方法能够从远程api中获取数据" />
     <MESSAGE value="修改了DataApi中的addItem()方法，现在该方法能够向远程api发送添加item的请求" />
     <MESSAGE value="修改了DataApi中的updateItemContent()方法，现在该方法能够向远程api发送修改列表项内容的请求；&#10;移除了无用的方法和注释；" />
-    <option name="LAST_COMMIT_MESSAGE" value="修改了DataApi中的updateItemContent()方法，现在该方法能够向远程api发送修改列表项内容的请求；&#10;移除了无用的方法和注释；" />
+    <MESSAGE value="改成了用Router来控制all、active、competed的显示，并用为添加新item栏添加了ant样式" />
+    <option name="LAST_COMMIT_MESSAGE" value="改成了用Router来控制all、active、competed的显示，并用为添加新item栏添加了ant样式" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -527,13 +541,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/reducers/reducer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="726">
-          <caret line="33" column="40" selection-start-line="33" selection-start-column="40" selection-end-line="33" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/ListUnit.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="242">
@@ -802,13 +809,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/ListUnit.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="16" column="26" selection-start-line="16" selection-start-column="26" selection-end-line="16" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="264">
@@ -842,8 +842,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/AddUnit.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="506">
-          <caret line="26" column="37" selection-start-line="26" selection-start-column="37" selection-end-line="26" selection-end-column="37" />
+        <state relative-caret-position="44">
+          <caret line="2" selection-start-line="2" selection-end-line="3" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/antd/lib/checkbox/Checkbox.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="412">
+          <caret line="31" column="21" selection-start-line="31" selection-start-column="21" selection-end-line="31" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/ListUnit.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="29" column="30" selection-start-line="29" selection-start-column="30" selection-end-line="29" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
