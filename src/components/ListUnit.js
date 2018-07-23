@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import '../css/ListUnit.css';
 import 'antd/dist/antd.css';
-import {Input, Checkbox} from 'antd';
+import {Input, Checkbox, List} from 'antd';
 
 export default class ListUnit extends Component {
     constructor(props) {
@@ -15,9 +15,10 @@ export default class ListUnit extends Component {
         }
     }
 
-    componentDidMount(){
+    componentDidMount() {
         this.props.onPageLoad();
     }
+
 
     render() {
         const {onCheckBoxClicked, onSpanClicked} = this.props;
@@ -25,14 +26,11 @@ export default class ListUnit extends Component {
             let itemElem = null;
             if (item.display) {
                 itemElem = <li className={item.checked ? 'checked' : ''}>
-                    {/*<input name="done-todo" type="checkbox" className="done-todo" checked={item.checked}*/}
-                           {/*onClick={onCheckBoxClicked.bind(this, item.id)}/>*/}
                     <Checkbox checked={item.checked} onClick={onCheckBoxClicked.bind(this, item.id)}/>
 
-                    {/*<span ref={this.spanContent} contentEditable={item.editable} onClick={onSpanClicked.bind(this, item.id)}*/}
-                    {/*onKeyUp={this.onKeyUp.bind(this, item.id)}> {item.content}</span>*/}
                     {item.editable ?
-                        (<input type='text' ref={this.inputValue} onKeyUp={this.onKeyUp.bind(this, item.id)} defaultValue={item.content}/>) :
+                        (<input type='text' ref={this.inputValue} onKeyUp={this.onKeyUp.bind(this, item.id)}
+                                defaultValue={item.content}/>) :
                         (<span onDoubleClick={onSpanClicked.bind(this, item.id)}>{item.content}</span>)}
 
                 </li>
@@ -40,11 +38,13 @@ export default class ListUnit extends Component {
             return itemElem;
         });
 
-        let resultElem =
-            <ol>
-                {itemsArray}
-            </ol>
-        return resultElem;
+        return (
+            <List
+                bordered
+                dataSource={itemsArray}
+                renderItem={item => (<List.Item>{item}</List.Item>)}
+            />
+        );
     }
 
 }
